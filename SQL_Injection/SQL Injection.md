@@ -130,7 +130,7 @@ then an attacker can submit the input:
 
 This will cause the application to return all usernames and passwords along with the names and descriptions of products
 
-[SQL Injection UNION attacks](https://www.notion.so/SQL-Injection-UNION-attacks-11c1af486e254f1196e7ffefbc433389?pvs=21)
+[SQL Injection UNION attacks](SQL_Injection_UNION_attacks.md)
 
 ## **Examining the database**
 
@@ -150,7 +150,7 @@ You can also determine what database tables exist, and which columns they contai
 SELECT * FROM information_schema.tables
 ```
 
-[****Examining the database in SQL injection attacks****](https://www.notion.so/Examining-the-database-in-SQL-injection-attacks-0fb85412ea7f40d6a16afb42b1de4798?pvs=21)
+[****Examining the database in SQL injection attacks****](Examining_the_database_in_SQL_injection_attacks.md)
 
 ## **Blind SQL injection vulnerabilities**
 
@@ -164,7 +164,7 @@ Depending on the nature of the vulnerability and the database involved, the foll
 - You can conditionally trigger a time delay in the processing of the query, allowing you to infer the truth of the condition based on the time that the application takes to respond.
 - You can trigger an out-of-band network interaction, using [OAST](https://portswigger.net/burp/application-security-testing/oast) techniques. This technique is extremely powerful and works in situations where the other techniques do not. Often, you can directly exfiltrate data via the out-of-band channel, for example by placing the data into a DNS lookup for a domain that you control.
 
-[Blind SQL Injection](https://www.notion.so/Blind-SQL-Injection-e08762a36a714654950441d88879bdaa?pvs=21)
+[Blind SQL Injection](Blind_SQL_Injection.md)
 
 ## **How to detect SQL injection vulnerabilities**
 
