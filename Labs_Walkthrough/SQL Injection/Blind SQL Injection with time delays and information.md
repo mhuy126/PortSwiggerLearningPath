@@ -99,15 +99,15 @@ Cookie: TrackingId=none'%3BSELECT CASE WHEN (username='administrator' AND LENGTH
 
 Switch to `Resource pool` tab → Select `Create new resource pool` → Enter the name for the pool and **********check********** the box of `Maximum concurrent requests` → Set it value as `1`
 
-![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20informati%20images/Untitled.png)
+![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20information%20images/Untitled.png)
 
 Click `Start attack` → Click on the `Columns` drop-down menu → Click `Response received` (This will represent the number of milliseconds the application took to respond)
 
-![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20informati%20images/Untitled%201.png)
+![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20information%20images/Untitled%201.png)
 
 Once the attack is done → Check out the result and focus on the request which has the `response received` value is smaller than 10000 → At that request’s payload, the application responded immediately → It was a false condition
 
-![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20informati%20images/Untitled%202.png)
+![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20information%20images/Untitled%202.png)
 
 The request which has payload `20`  → The password’s length is not smaller than `20` → It is equal to `20` → The password has ****20**** characters long
 
@@ -121,9 +121,9 @@ Cookie: TrackingId=none'%3BSELECT CASE WHEN (username='administrator' AND SUBSTR
 
 Choose the attack type to `Cluster Bomb` → Go to ****************Payloads**************** tab → Set the payload set 1 (`§1§`) to a N**umber list** from **1** to ****20**** (as the password length) → Set the payload set **2** (`§a§`) to a **********************Simple list********************** which contains lower-case alphanumeric characters
 
-![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20informati%20images/Untitled%203.png)
+![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20information%20images/Untitled%203.png)
 
-![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20informati%20images/Untitled%204.png)
+![Untitled](Blind%20SQL%20Injection%20with%20time%20delays%20and%20information%20images/Untitled%204.png)
 
 Click ************************Start attack************************ and wait for awhile → Combine all of the **characters in payloads** of the ****************requests**************** that took more than 10000 millisecond for ********************responding******************** 
 
