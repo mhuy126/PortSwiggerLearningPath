@@ -25,16 +25,18 @@ Using this technique, we can retrieve data in the way already described, by syst
 
 You can cause a time delay in the database when the query is processed. The following will cause an unconditional time delay of 10 seconds.
 
-| Oracle | dbms_pipe.receive_message(('a'),10) |
+| DATABASE TYPE | QUERIES |
 | --- | --- |
+| Oracle | dbms_pipe.receive_message(('a'),10) |
 | Microsoft | WAITFOR DELAY '0:0:10' |
 | PostgreSQL | SELECT pg_sleep(10) |
 | MySQL | SELECT SLEEP(10) |
 
 You can test a single boolean condition and trigger a time delay if the condition is true.
 
-| Oracle | SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual |
+| DATABASE TYPE | QUERIES |
 | --- | --- |
+| Oracle | SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual |
 | Microsoft | IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10' |
 | PostgreSQL | SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END |
 | MySQL | SELECT IF(YOUR-CONDITION-HERE,SLEEP(10),'a') |
