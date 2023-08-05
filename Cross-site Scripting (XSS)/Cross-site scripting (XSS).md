@@ -43,7 +43,7 @@ Read more at this [blog](https://portswigger.net/research/alert-is-dead-long-liv
 
 - [Reflected XSS](#): where the malicious script comes from the current HTTP request.
 - [Stored XSS](#): where the malicious script comes from the website's database.
-- [DOM-based XSS](Sub_Pages/DOM%20XSS%20in%20documentWrite%20sink%20using%20source%20locationSearch.md): where the vulnerability exists in client-side code rather than server-side code.
+- [DOM-based XSS](Sub_Pages/DOM-based%20XSS.md): where the vulnerability exists in client-side code rather than server-side code.
 
 # **What can XSS be used for?**
 
