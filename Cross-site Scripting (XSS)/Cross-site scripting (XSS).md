@@ -1,6 +1,6 @@
 # Cross-site scripting (XSS)
 
-![Untitled](Cross-site%20scripting%20(XSS)%20/Untitled.png)
+![Untitled](Cross-site%20scripting%20(XSS)%20images/Untitled.png)
 
 # ****What is cross-site scripting (XSS)?****
 
@@ -35,7 +35,7 @@ However, since Chrome version 92 onward (July 20th, 2021), cross-origin iframes 
 
 Therefore, using `print()` instead is recommended!
 
-![Untitled](Cross-site%20scripting%20(XSS)%20/Untitled%201.png)
+![Untitled](Cross-site%20scripting%20(XSS)%20images/Untitled%201.png)
 
 Read more at this [blog](https://portswigger.net/research/alert-is-dead-long-live-print)
 
