@@ -15,7 +15,7 @@ Attacker can construct a link to send a victim to a vulnerable page with a paylo
 
 In certain circumstances (targeting a 404 page or a website running PHP), payload can also be placed in the path.
 
-For more detail of ************sources************ and **********sinks********** → Visit the [DOM-based vulnerabilities](https://www.notion.so/DOM-based-vulnerabilities-557bba280948481faf60563ec98a25fc?pvs=21)
+For more detail of ************sources************ and **********sinks********** → Visit the [DOM-based vulnerabilities](#)
 
 # ****How to test for DOM-based cross-site scripting****
 
@@ -75,7 +75,7 @@ The `document.write` sink works with `script` elements → Use a simple payload:
 document.write('... <script>alert(document.domain)</script> ...');
 ```
 
-Visit this [Lab: DOM XSS in `document.write` sink using source `location.search`](https://www.notion.so/DOM-XSS-in-document-write-sink-using-source-location-search-c4df35c1a119434d8e628ce308f628d7?pvs=21)
+Visit this [Lab: DOM XSS in `document.write` sink using source `location.search`](../../Labs_Walkthrough/Cross-site%20Scripting%20(XSS)/DOM%20XSS%20in%20documentWrite%20sink%20using%20source%20locationSearch.md)
 
 However, the content is written to `document.write` might include some surrounding context. For example, you might need to close some existing elements before using your JavaScript payload.
 
