@@ -79,7 +79,7 @@ Visit this [Lab: DOM XSS in `document.write` sink using source `location.search`
 
 However, the content is written to `document.write` might include some surrounding context. For example, you might need to close some existing elements before using your JavaScript payload.
 
-Visit this Lab: DOM XSS in `document.write` sink using source `location.search` inside a select element
+Visit this [Lab: DOM XSS in `document.write` sink using source `location.search` inside a select element](../../Labs_Walkthrough/Cross-site%20Scripting%20(XSS)/DOM%20XSS%20in%20documentWrite%20sink%20using%20source%20locationSearch%20inside%20a%20select%20element.md)
 
 The `innerHTML` sink and the `svg onload` events do not accept `script` elements on any modern browser → Use alternative elements like `img` or `iframe` or `onload` or `onerror`:
 
@@ -87,4 +87,4 @@ The `innerHTML` sink and the `svg onload` events do not accept `script` elements
 element.innerHTML='... <img src=1 onerror=alert(document.domain)> ...'
 ```
 
-Visit this Lab: DOM XSS in `innerHTML` sink using source `location.search`
+Visit this [Lab: DOM XSS in `innerHTML` sink using source `location.search`](../../Labs_Walkthrough/Cross-site%20Scripting%20(XSS)/DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20locationSearch.md)
