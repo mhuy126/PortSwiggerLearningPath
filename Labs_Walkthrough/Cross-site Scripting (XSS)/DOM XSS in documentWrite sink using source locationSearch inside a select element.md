@@ -5,7 +5,7 @@
 > 
 > This lab contains a [DOM-based cross-site scripting](../../Cross-site%20Scripting%20(XSS)/Sub_Pages/DOM-based%20XSS.md) vulnerability in the stock checker functionality. It uses the JavaScript `document.write` function, which writes data out to the page. The `document.write` function is called with data from `location.search` which you can control using the website URL. The data is enclosed within a select element.
 > 
-> To solve this lab, perform a [cross-site scripting](ht../../Cross-site%20Scripting%20(XSS)/Cross-site%20scripting%20(XSS).md) attack that breaks out of the select element and calls the `alert` function.
+> To solve this lab, perform a [cross-site scripting](../../Cross-site%20Scripting%20(XSS)/Cross-site%20scripting%20(XSS).md) attack that breaks out of the select element and calls the `alert` function.
 > 
 
 Access the Home page:
