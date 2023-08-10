@@ -1,12 +1,12 @@
 # DOM XSS in jQuery anchor href atribute sink using locationSearch source
 
-> ****\*\*****\*\*\*\*****\*\*****Instructions****\*\*****\*\*\*\*****\*\*****
+> **Instructions**
 >
 > This lab contains a [DOM-based cross-site scripting](<../../Cross-site%20Scripting%20(XSS)/Sub_Pages/DOM-based%20XSS.md>) vulnerability in the submit feedback page. It uses the jQuery library's `$` selector function to find an anchor element, and changes its `href` attribute using data from `location.search`.
 >
 > To solve this lab, make the "back" link alert `document.cookie`.
 
-Access the **\*\*\*\***\*\***\*\*\*\***Home Page**\*\*\*\***\*\***\*\*\*\***, there is an \***\*\*\*\*\*\*\***anchor\***\*\*\*\*\*\*\*** tag `a` named ****\*\*****\*\*\*\*****\*\*****Submit feedback****\*\*****\*\*\*\*****\*\***** with the `href` attribute:
+Access the **Home Page**, there is an **anchor\** tag `a` named **Submit feedback** with the `href` attribute:
 
 ![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20locationSearch%20source%20images/Untitled.png)
 
@@ -14,7 +14,7 @@ Access the **\*\*\*\***\*\***\*\*\*\***Home Page**\*\*\*\***\*\***\*\*\*\***, th
 <a href="/feedback?returnPath=/">Submit feedback</a>
 ```
 
-Click the anchor ******\*\*******\*\*******\*\*******Submit feedback******\*\*******\*\*******\*\******* and you will be routed to the feedback page
+Click the anchor **Submit feedback** and you will be routed to the feedback page
 
 ![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20locationSearch%20source%20images/Untitled%201.png)
 
