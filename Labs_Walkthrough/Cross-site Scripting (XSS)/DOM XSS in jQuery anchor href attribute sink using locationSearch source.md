@@ -8,7 +8,7 @@
 
 Access the **\*\*\*\***\*\***\*\*\*\***Home Page**\*\*\*\***\*\***\*\*\*\***, there is an \***\*\*\*\*\*\*\***anchor\***\*\*\*\*\*\*\*** tag `a` named ****\*\*****\*\*\*\*****\*\*****Submit feedback****\*\*****\*\*\*\*****\*\***** with the `href` attribute:
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled.png)
 
 ```html
 <a href="/feedback?returnPath=/">Submit feedback</a>
@@ -16,7 +16,7 @@ Access the **\*\*\*\***\*\***\*\*\*\***Home Page**\*\*\*\***\*\***\*\*\*\***, th
 
 Click the anchor ******\*\*******\*\*******\*\*******Submit feedback******\*\*******\*\*******\*\******* and you will be routed to the feedback page
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled%201.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled%201.png)
 
 Now, press `Ctrl + U` to view the Page’s Source and you would notice 2 points:
 
@@ -37,7 +37,7 @@ Now, press `Ctrl + U` to view the Page’s Source and you would notice 2 points:
 
 The script would take the value from `?returnPath=` from the URL and then parse that value into the `href` attribute of the `#backLink` element which is the `< Back` button below
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled%202.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled%202.png)
 
 ```jsx
 <a id="backLink" href="/feedback">
@@ -53,7 +53,7 @@ https://0aba006803a4c6ba81ab116a001400be.web-security-academy.net/feedback?retur
 
 Press `Enter` to submit the change → Right-click to inspect the element of anchor ******\*\*******\*\*******\*\*******Submit Feedback******\*\*******\*\*******\*\******* → Verify that the `href` attribute has been changed with the `alert()` function:
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled%203.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled%203.png)
 
 ```jsx
 <a href="/feedback?returnPath=javascript:alert(1)">Submit feedback</a>
@@ -61,7 +61,7 @@ Press `Enter` to submit the change → Right-click to inspect the element of anc
 
 Do the same with the `< Back` button
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled%204.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled%204.png)
 
 ```jsx
 <a id="backLink" href="javascript:alert(1)">
@@ -71,4 +71,4 @@ Do the same with the `< Back` button
 
 Click the `< Back` button and it will display an alert pop-up window
 
-![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20atribute%20sink%20using%20%locationSearch%20source%20images/Untitled%205.png)
+![Untitled](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20%locationSearch%20source%20images/Untitled%205.png)
