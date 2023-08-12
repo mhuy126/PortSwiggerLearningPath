@@ -83,7 +83,7 @@ To handle the error of the element `<img>` when the `src` attribute is not succe
 
 ![Untitled](DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event%20images/Untitled%2013.png)
 
-****************How to combine the `<img>`'s behavior with the `$()` jQuery selector?**
+**How to combine the `<img>`'s behavior with the `$()` jQuery selector?**
 
 ![Untitled](DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event%20images/Untitled%2014.png)
 
